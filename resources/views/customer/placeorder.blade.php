@@ -8,7 +8,7 @@
     </tr>
 <tr style="background-color:aquamarine; text-align:center">
     <td><form action="{{ route('showadmindetails') }}" method="get"> @csrf <button type="submit" class="btn btn-success" style="width: 100%">Customer Name</button></form></td>
-    <td><form action="" method="get"> @csrf <button type="submit" class="btn btn-success" style="width: 100%">Place Order</button></form></td>
+    <td><form action="{{ route('showproductdetails2') }}" method="get"> @csrf <button type="submit" class="btn btn-success" style="width: 100%">Place Order</button></form></td>
     <td>
         <form action="{{ route('logout') }}" method="get"> @csrf <button type="submit" class="btn btn-danger" style="width: 100%">Logout</button></form>
     </td>
@@ -19,6 +19,13 @@
             $i=0;
         @endphp
         <br>
+        @if($message=Session::get('success'))
+                        <div class="alert alert-success">
+
+                            <strong>{{$message}}</strong>
+                        </div>
+                        @endif
+
         <table border="1" style="width: 100%; text-align:center; margin-top:2vh">
             <tr style="border: 1px black solid; height:5vh">
                 <th style="border: 1px black solid">No</th>

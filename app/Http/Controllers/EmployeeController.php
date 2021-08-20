@@ -67,6 +67,12 @@ class EmployeeController extends Controller
 
 
     }
+    public function showEmployeeName(){
+        $currentUser=$_COOKIE['currentUser'];
+        $employee=Employee::all()->where('email','=',$currentUser)->first();
+        return view('employee.employeedetails', compact('employee'));
+    }
+
 
     /**
      * Display the specified resource.

@@ -56,7 +56,7 @@ class LoginController extends Controller
         );
 
         if(Auth::attempt($user_data)){
-
+            setcookie("currentUser",$request->get('email'));
                 return redirect('employee');
 
 

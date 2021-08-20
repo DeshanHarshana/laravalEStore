@@ -5,7 +5,9 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Models\Employee;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,8 @@ Route::get('/employee_details', [AdminController::class, 'showemployeedetails'])
 Route::get('/newProduct', [AdminController::class, 'addnewproduct'])->name('addnewproduct');
 Route::get('/newEmployee', [EmployeeController::class, 'addnewemployee'])->name('addnewemployee');
 Route::get('/customerDetails', [CustomerController::class, 'showCustomerName'])->name('showCustomerName');
+Route::get('/employeeDetails', [EmployeeController::class, 'showEmployeeName'])->name('showEmployeeName');
+Route::get('/orderDetails', [OrderController::class, 'showAll'])->name('showOrder');
 
 Route::get('/success', [LoginController::class, 'successLogin']);
 
@@ -51,3 +55,5 @@ Route::put('/updateproduct/{id}', [ProductController::class, 'update'])->name('u
 Route::get('/editproduct/{id}', [ProductController::class, 'edit'])->name('editproduct');
 Route::resource('products', ProductController::class);
 Route::resource('employees', EmployeeController::class);
+
+Route::resource('order', OrderController::class);

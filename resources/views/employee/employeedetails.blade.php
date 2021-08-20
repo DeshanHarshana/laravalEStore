@@ -14,7 +14,15 @@
     </td>
 </tr>
     <tr style="height: 40%">
-        <td colspan="3" style="width: 100%; height:100%; text-align:center"><h1>Welcome To Employee dashboard</h1><td>
+        <td colspan="3" style="width: 100%; height:100%; text-align:center">
+
+
+
+            <h1>
+            {{ $employee->name }}
+        </h1>
+
+        <td>
     </tr>
 
 </table>
