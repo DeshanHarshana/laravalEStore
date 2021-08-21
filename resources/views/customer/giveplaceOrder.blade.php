@@ -16,6 +16,12 @@
 <tr>
 
     <td colspan="4" style="width: 100%; height:100%;">
+        @if($message=Session::get('success'))
+        <div class="alert alert-success">
+
+            <strong>{{$message}}</strong>
+        </div>
+        @endif
 
             <table>
                 <form action="{{ route('order.store') }}" method="post">

@@ -114,6 +114,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        error_log("product id " . $product->id);
         $product -> delete();
         return redirect()->route('showproductdetails')->with('success', "Product Delete SuccessFully");
     }

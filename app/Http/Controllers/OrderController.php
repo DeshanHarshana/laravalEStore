@@ -42,6 +42,7 @@ class OrderController extends Controller
             'employeeEmail'=>$request->get('employeeEmail'),
             'productName'=>$request->get('productName'),
             'detail'=>$request->get('detail'),
+            'price'=>$request->get('price'),
             'customerName'=>$user->name,
             'customerAddress'=>$user->address,
             'customerMobile'=>$user->mobile,

@@ -14,6 +14,12 @@
 </tr>
     <tr style="height: 40%">
         <td colspan="4" style="width: 100%; height:100%;">
+            @if($message=Session::get('success'))
+            <div class="alert alert-success">
+
+                <strong>{{$message}}</strong>
+            </div>
+            @endif
 
             <a href="{{ route('addnewemployee') }}" class="btn btn-primary" style="position:relative">Enroll new Employee</a>
             @php
@@ -30,7 +36,7 @@
                 </tr>
                 @foreach ($employee as $e )
                 <tr style="border: 1px black solid; height:5vh">
-                    <td style="border: 1px black solid">{{ ++$i }}</td>
+                    <td style="border: 1px black solid">{{ $e->id }}</td>
                     <td style="border: 1px black solid">{{ $e->name }}</td>
                     <td style="border: 1px black solid">{{ $e->email }}</td>
                     <td style="border: 1px black solid">{{ $e->mobile }}</td>

@@ -4,7 +4,14 @@
 <table border="1" style="margin-top:10%;width:60vw; height:60vh">
     <tr style="background-color: lightcoral; text-align:center">
         <td colspan="4"><h2>E-Store</h2></td>
+<td>
+    @if($message=Session::get('success'))
+                        <div class="alert alert-success">
 
+                            <strong>{{$message}}</strong>
+                        </div>
+                        @endif
+</td>
     </tr>
 <tr style="background-color:aquamarine; text-align:center">
     <td><form action="{{ route('showEmployeeName') }}" method="get"> @csrf <button type="submit" class="btn btn-success" style="width: 100%">Employee Name</button></form></td>
@@ -33,9 +40,9 @@
             @foreach ($order as $p )
             <tr style="border: 1px black solid; height:5vh">
                 <td style="border: 1px black solid">{{ ++$i }}</td>
-                <td style="border: 1px black solid">{{ $p->employeeEmail }}</td>
                 <td style="border: 1px black solid">{{ $p->productName }}</td>
                 <td style="border: 1px black solid">{{ $p->detail }}</td>
+                <td style="border: 1px black solid">{{ $p->price }}</td>
                 <td style="border: 1px black solid">{{ $p->customerName }}</td>
                 <td style="border: 1px black solid">{{ $p->customerAddress }}</td>
                 <td style="border: 1px black solid">{{ $p->customerMobile }}</td>

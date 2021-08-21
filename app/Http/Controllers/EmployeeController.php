@@ -123,7 +123,7 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         $employee -> delete();
-        return redirect()->route('showproductdetails')->with('success', "Product Delete SuccessFully");
+        return redirect()->route('showemployeedetails')->with('success', "Product Delete SuccessFully");
 
     }
 }
